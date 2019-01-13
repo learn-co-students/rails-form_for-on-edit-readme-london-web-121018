@@ -1,0 +1,2 @@
+class NeopetsController < ApplicationController
+end
