@@ -870,3 +870,282 @@ Migrating to AddColumnToNeopets (20190113201036)
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36mSQL (0.8ms)[0m  [1mUPDATE "neopets" SET "user_id" = ?, "updated_at" = ? WHERE "neopets"."id" = ?[0m  [["user_id", 2], ["updated_at", "2019-01-13 20:13:19.883830"], ["id", 3]]
   [1m[35m (1.9ms)[0m  commit transaction
+
+
+Started GET "/index" for ::1 at 2019-01-13 20:36:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/index"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.11) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.11) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.11) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  rack (1.6.11) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.11) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/deji/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/deji/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/deji/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (17.2ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (13.2ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (186.1ms)
+
+
+Started GET "/users" for ::1 at 2019-01-13 20:36:58 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 1481ms (Views: 1461.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/neopets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-13 20:37:00 +0000
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2019-01-13 20:37:00 +0000
+
+
+Started GET "/assets/neopets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-13 20:37:00 +0000
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2019-01-13 20:37:00 +0000
+
+
+Started GET "/users" for ::1 at 2019-01-13 20:38:07 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2019-01-13 20:38:13 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 97ms (Views: 43.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2" for ::1 at 2019-01-13 20:38:31 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 58ms (Views: 55.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20190113194757)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "money" integer DEFAULT 50, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190113194757"]]
+  [1m[35m (2.0ms)[0m  commit transaction
+Migrating to CreateNeopets (20190113194929)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "neopets" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "vegan" boolean DEFAULT 'f', "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190113194929"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+Migrating to AddColumnToNeopets (20190113201036)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "neopets" ADD "user_id" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190113201036"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Deji"], ["created_at", "2019-01-13 20:43:25.662736"], ["updated_at", "2019-01-13 20:43:25.662736"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Goku"], ["created_at", "2019-01-13 20:43:25.667150"], ["updated_at", "2019-01-13 20:43:25.667150"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "neopets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "The Champ"], ["created_at", "2019-01-13 20:43:25.678606"], ["updated_at", "2019-01-13 20:43:25.678606"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "neopets" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Leonardo"], ["created_at", "2019-01-13 20:43:25.682681"], ["updated_at", "2019-01-13 20:43:25.682681"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/users" for ::1 at 2019-01-13 20:43:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 410ms (Views: 387.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2019-01-13 20:58:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 457ms (Views: 429.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users" for ::1 at 2019-01-13 20:59:10 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 57ms (Views: 55.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/www.linkedin.com/in/ayodeji-okusanya-5277489b" for ::1 at 2019-01-13 20:59:15 +0000
+
+ActionController::RoutingError (No route matches [GET] "/www.linkedin.com/in/ayodeji-okusanya-5277489b"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.11) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.11) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.11) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  rack (1.6.11) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.11) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/deji/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/deji/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/deji/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.3ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (21.5ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (173.0ms)
+
+
+Started GET "/www.linkedin.com/in/ayodeji-okusanya-5277489b" for ::1 at 2019-01-13 20:59:26 +0000
+
+ActionController::RoutingError (No route matches [GET] "/www.linkedin.com/in/ayodeji-okusanya-5277489b"):
+  actionpack (4.2.11) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.11) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.11) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.11) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.11) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.11) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.11) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.11) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.11) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.11) lib/rails/engine.rb:518:in `call'
+  railties (4.2.11) lib/rails/application.rb:165:in `call'
+  rack (1.6.11) lib/rack/lock.rb:17:in `call'
+  rack (1.6.11) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.11) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/deji/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/deji/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/deji/.rvm/rubies/ruby-2.3.3/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.9ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.9ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (189.0ms)
+
+
+Started GET "/users" for ::1 at 2019-01-13 21:00:06 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 75ms (Views: 74.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2019-01-13 21:01:03 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 63ms (Views: 59.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for ::1 at 2019-01-13 21:01:33 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2019-01-13 21:02:02 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2019-01-13 21:02:07 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 106ms (Views: 63.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/neopets" for ::1 at 2019-01-13 21:02:28 +0000
+Processing by NeopetsController#index as HTML
+  [1m[36mNeopet Load (1.2ms)[0m  [1mSELECT "neopets".* FROM "neopets"[0m
+  Rendered neopets/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 62ms (Views: 45.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/neopets/1/edit" for ::1 at 2019-01-13 21:02:35 +0000
+Processing by NeopetsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mNeopet Load (0.3ms)[0m  SELECT  "neopets".* FROM "neopets" WHERE "neopets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered neopets/edit.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 113ms (Views: 101.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/neopets/1" for ::1 at 2019-01-13 21:02:46 +0000
+Processing by NeopetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1RZKfK+IeqO2m7UDLFjKMgnV9NMKz9Ru8VdmfuozyLl7l71sW6xCHvT+SaIiMMaS9I2KgDtl7C7M/Oo26aWzZA==", "neopet"=>{"name"=>"The Champion "}, "commit"=>"Update Neopet", "id"=>"1"}
+  [1m[36mNeopet Load (0.2ms)[0m  [1mSELECT  "neopets".* FROM "neopets" WHERE "neopets"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+ArgumentError (wrong number of arguments (given 1, expected 2)):
+  app/controllers/neopets_controller.rb:27:in `update'
+
+
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/deji/.rvm/gems/ruby-2.3.3/gems/actionpack-4.2.11/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (135.9ms)
+
+
+Started GET "/neopets/1" for ::1 at 2019-01-13 21:03:21 +0000
+Processing by NeopetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mNeopet Load (0.1ms)[0m  SELECT  "neopets".* FROM "neopets" WHERE "neopets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered neopets/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 44ms (Views: 33.9ms | ActiveRecord: 0.8ms)

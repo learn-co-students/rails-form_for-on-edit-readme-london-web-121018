@@ -1,0 +1,7 @@
+<h1>Welcome to Neopets!</h1>
+
+<p>Select your user account:</p>
+
+<% @users.each do |u| %>
+  <p><%= link_to u.name, user_path(u)  %></p>
+<% end  %>

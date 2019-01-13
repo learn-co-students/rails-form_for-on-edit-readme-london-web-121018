@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+deji = User.create(name:"Deji")
+
+goku = User.create(name:"Goku")
+
+rocky = Neopet.create(name:"The Champ")
+
+leo = Neopet.create(name:"Leonardo")
