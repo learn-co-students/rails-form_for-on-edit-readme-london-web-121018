@@ -1,3 +1,24 @@
 <h1>Hey <%= @user.name %></h1>
 
 <h2>You have <%= @user.money %> Zeni remaining. Don't spend it all at once!</h2>
+
+<p>
+Here are you Neopets:
+<br>
+<% @user.neopets.each do |n| %>
+<br>
+<strong><%= n.name %></strong>
+<br>
+
+<% end %>
+
+
+
+
+
+
+
+
+</p>
+
+<p><%= link_to "Add a Neopet", "/neopets/index/#{@user.id}"  %></p>

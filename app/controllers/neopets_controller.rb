@@ -2,6 +2,7 @@ class NeopetsController < ApplicationController
 
   def index
     @neopets = Neopet.all
+    @user = User.find(params[:id])
   end
 
 
@@ -19,13 +20,17 @@ class NeopetsController < ApplicationController
   end
 
   def edit
-    @neopet = Neopet.find(params[:id])
+    @neopet = Neopet.find(params[:pet_id])
+    @user = User.find(params[:id])
   end
 
   def update
-    @neopet = Neopet.find(params[:id])
-    @neopet = Neopet.update(neopet_params(:name))
-    redirect_to neopet_path(@neopet)
+    @neopet = Neopet.find(params[:pet_id])
+    @user = User.find(params[:id])
+    @neopet.user = @user
+    @user.neopets << @neopet
+    # binding.pry
+    redirect_to user_path(@user)
   end
 
   def delete

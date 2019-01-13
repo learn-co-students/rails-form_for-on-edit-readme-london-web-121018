@@ -1,5 +1,5 @@
 <h1>Choose a Neopet!</h1>
 
 <% @neopets.each do |n| %>
-  <h2><%= link_to n.name, edit_neopet_path(n) %></h2>
+  <h2><%= link_to n.name, "neopets/edit/#{@user.id}/#{n.id}" %></h2>
 <% end %>

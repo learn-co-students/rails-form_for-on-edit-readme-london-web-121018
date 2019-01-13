@@ -1,4 +1,4 @@
-<%= form_for @neopet do |f|  %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+<%= form_tag "/neopets/#{@user.id}/#{@neopet.id}/edit", method: "post" do |f|  %>
+  <p><%= @neopet.name %></p>
+  <%= submit_tag "Add Neopet" %>
 <% end %>
